@@ -6,6 +6,7 @@ import { IoIosStar } from "react-icons/io";
 import { GrNew } from "react-icons/gr";
 import { HiOutlineReceiptRefund } from "react-icons/hi";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
+import { TbCategory } from "react-icons/tb";
 
 const Sidebar = ({ selected }: { selected: (tab: string) => string }) => {
   const [selectedTab, setSelectedTab] = useState<string>("Dashboard");
@@ -112,15 +113,15 @@ const Sidebar = ({ selected }: { selected: (tab: string) => string }) => {
                   <button
                     type="button"
                     className={`hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hs-accordion-active:text-white dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300 ${
-                      selectedTab == "Users" &&
+                      selectedTab == "User Management" &&
                       "!bg-neutral-700 !text-neutral-300"
                     }`}
                     onClick={() => {
-                      setSelectedTab("Users");
+                      setSelectedTab("User Management");
                     }}
                   >
                     <FaRegUser />
-                    Users
+                    User Management
                   </button>
                 </li>
 
@@ -138,7 +139,63 @@ const Sidebar = ({ selected }: { selected: (tab: string) => string }) => {
                   </button>
                 </li>
 
-                <li className="hs-accordion" id="projects-accordion">
+                <li className="hs-accordion">
+                  <button
+                    type="button"
+                    className={`hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hs-accordion-active:text-white dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300 ${
+                      selectedTab == "Categories" &&
+                      "!bg-neutral-700 !text-neutral-300"
+                    }`}
+                    onClick={() => setSelectedTab("Categories")}
+                  >
+                    <TbCategory />
+                    Categories
+                  </button>
+                </li>
+
+                <li className="hs-accordion">
+                  <button
+                    type="button"
+                    className={`hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hs-accordion-active:text-white dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300 ${
+                      selectedTab == "ProductReview" &&
+                      "!bg-neutral-700 !text-neutral-300"
+                    }`}
+                    onClick={() => setSelectedTab("ProductReview")}
+                  >
+                    <TbCategory />
+                    Product Review
+                  </button>
+                </li>
+
+                <li className="hs-accordion">
+                  <button
+                    type="button"
+                    className={`hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hs-accordion-active:text-white dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300 ${
+                      selectedTab == "ProductAttributes" &&
+                      "!bg-neutral-700 !text-neutral-300"
+                    }`}
+                    onClick={() => setSelectedTab("ProductAttributes")}
+                  >
+                    <TbCategory />
+                    Product Attributes
+                  </button>
+                </li>
+
+                <li className="hs-accordion">
+                  <button
+                    type="button"
+                    className={`hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hs-accordion-active:text-white dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300 ${
+                      selectedTab == "ProductInfo" &&
+                      "!bg-neutral-700 !text-neutral-300"
+                    }`}
+                    onClick={() => setSelectedTab("ProductInfo")}
+                  >
+                    <TbCategory />
+                    Product Info
+                  </button>
+                </li>
+
+                <li className="hs-accordion" id="categorys-accordion">
                   <button
                     type="button"
                     className={`hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hs-accordion-active:text-white dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300 ${
@@ -147,6 +204,108 @@ const Sidebar = ({ selected }: { selected: (tab: string) => string }) => {
                     }`}
                     aria-expanded="true"
                     aria-controls="projects-accordion-sub-1-collapse-1"
+                  >
+                    <IoShirt />
+                    Categories
+                    <svg
+                      className="hs-accordion-active:block ms-auto hidden size-4 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="m18 15-6-6-6 6" />
+                    </svg>
+                    <svg
+                      className="hs-accordion-active:hidden ms-auto block size-4 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </button>
+
+                  <div
+                    id="projects-accordion-sub-1-collapse-1"
+                    className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
+                    role="region"
+                    aria-labelledby="projects-accordion"
+                  >
+                    <ul className="pt-1 ps-7 space-y-1">
+                      <li>
+                        <a
+                          className={`flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300 dark:focus:text-neutral-300 ${
+                            selectedTab == "All Products" &&
+                            "!bg-neutral-700 !text-neutral-300"
+                          }`}
+                          href="#"
+                          onClick={() => setSelectedTab("All Products")}
+                        >
+                          All products
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          className={`flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300 dark:focus:text-neutral-300 ${
+                            selectedTab == "Product Attributes" &&
+                            "!bg-neutral-700 !text-neutral-300"
+                          }`}
+                          href="#"
+                          onClick={() => setSelectedTab("Product Attributes")}
+                        >
+                          Product Attributes
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className={`flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300 dark:focus:text-neutral-300 ${
+                            selectedTab == "New Products" &&
+                            "!bg-neutral-700 !text-neutral-300"
+                          }`}
+                          href="#"
+                          onClick={() => setSelectedTab("New Product")}
+                        >
+                          Add New Product
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className={`flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-300 dark:focus:text-neutral-300 ${
+                            selectedTab == "Top Selling Products" &&
+                            "!bg-neutral-700 !text-neutral-300"
+                          }`}
+                          href="#"
+                          onClick={() => setSelectedTab("Top Selling Products")}
+                        >
+                          Top Selling Products
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li className="hs-accordion" id="products-accordion">
+                  <button
+                    type="button"
+                    className={`hs-accordion-toggle w-full text-start flex items-center gap-x-3 py-2 px-2.5 text-sm text-gray-700 rounded-lg hover:bg-gray-500 focus:outline-none dark:bg-neutral-800 dark:text-neutral-400 dark:hs-accordion-active:text-white dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 dark:focus:text-neutral-300 ${
+                      selectedTab == "Products" &&
+                      "!bg-neutral-700 !text-neutral-300"
+                    }`}
+                    aria-expanded="true"
+                    aria-controls="products-accordion-sub-1-collapse-1"
                   >
                     <IoShirt />
                     Products
@@ -226,6 +385,7 @@ const Sidebar = ({ selected }: { selected: (tab: string) => string }) => {
                     </ul>
                   </div>
                 </li>
+
                 <li>
                   <button
                     type="button"
@@ -239,6 +399,7 @@ const Sidebar = ({ selected }: { selected: (tab: string) => string }) => {
                     Returns & Refunds
                   </button>
                 </li>
+
                 <li>
                   <button
                     type="button"

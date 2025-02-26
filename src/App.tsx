@@ -1,40 +1,27 @@
 import Wrapper from "./Pages/Wrapper";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
-import { useEffect } from "react";
-import "preline/preline";
-import { IStaticMethods } from "preline/preline";
-declare global {
-  interface Window {
-    HSStaticMethods: IStaticMethods;
-  }
-}
+import { Routes, Route } from "react-router-dom";
+import Login from "./Pages/Login";
+import { ConfigProvider, theme } from "antd";
+// import useAuth from "./Utils/useAuth";
 
 function App() {
+  // const { isLoggedIn } = useAuth();
+
   return (
     <>
-      <Router>
-        <LocationHandler />
+      <ConfigProvider
+        theme={{
+          algorithm: theme.darkAlgorithm,
+        }}
+      >
         <Routes>
           <Route path="/" element={<Wrapper />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
-      </Router>
+      </ConfigProvider>
     </>
   );
-}
-
-function LocationHandler() {
-  const location = useLocation();
-  useEffect(() => {
-    window.HSStaticMethods.autoInit();
-  }, [location.pathname]);
-
-  return null;
 }
 
 export default App;

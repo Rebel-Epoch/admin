@@ -9,14 +9,22 @@ const Wrapper = () => {
     switch (componentName) {
       case "Dashboard":
         return React.lazy(() => import("./Dashboard.tsx"));
+      case "User Management":
+        return React.lazy(() => import("./UserManagement/UserManagement.tsx"));
       case "Orders":
         return React.lazy(() => import("./Orders.tsx"));
+      case "Product Review":
+        return React.lazy(() => import("./Review/ProductReviews.tsx"));
       case "Products":
         return React.lazy(() => import("./Products.tsx"));
-      case "Users":
-        return React.lazy(() => import("./Users.tsx"));
+      case "Categories":
+        return React.lazy(() => import("./Categories/Categories.tsx"));
+      case "ProductAttributes":
+        return React.lazy(() => import("./Product/ProductAttributes.tsx"));
+      case "ProductInfo":
+        return React.lazy(() => import("./Product/ProductInfo.tsx"));
       case "Coupons":
-        return React.lazy(() => import("./Coupons.tsx"));
+        return React.lazy(() => import("./Coupons/Coupons.tsx"));
       case "New Arrivals":
         return React.lazy(() => import("./NewArrivals.tsx"));
       case "Returns & Refunds":
