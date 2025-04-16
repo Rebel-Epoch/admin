@@ -1,6 +1,7 @@
 import React, { useState, Suspense } from "react";
 import Sidebar from "../Components/Sidebar";
 import { CgSpinnerAlt } from "react-icons/cg";
+import { SidebarTrigger } from "@/Components/ui/sidebar.tsx";
 
 const Wrapper = () => {
   const [tab, setTab] = useState<string>("");
@@ -13,7 +14,7 @@ const Wrapper = () => {
         return React.lazy(() => import("./UserManagement/UserManagement.tsx"));
       case "Orders":
         return React.lazy(() => import("./Orders.tsx"));
-      case "Product Review":
+      case "ProductReview":
         return React.lazy(() => import("./Review/ProductReviews.tsx"));
       case "Products":
         return React.lazy(() => import("./Products.tsx"));
@@ -37,30 +38,7 @@ const Wrapper = () => {
   };
 
   return (
-    <div className="h-screen w-full flex">
-      <div className="w-[15%] border">
-        <Sidebar
-          selected={(tab: string) => {
-            setTab(tab);
-            return tab;
-          }}
-        />
-      </div>
-      <div className="p-4 py-5 basis-[85%] flex justify-start flex-col bg-[#1d1d1d] overflow-y-auto">
-        <h1 className="text-2xl font-bold text-white/90 mb-5">{tab}</h1>
-        <Suspense
-          fallback={
-            <div className="h-full w-full flex items-center justify-center">
-              <CgSpinnerAlt className="text-3xl text-[#1d1d1d] animate-spin" />
-            </div>
-          }
-        >
-          <div className="h-full w-full bg-[#1d1d1d] px-2">
-            {React.createElement(LazyLoad(tab))}
-          </div>
-        </Suspense>
-      </div>
-    </div>
+
   );
 };
 

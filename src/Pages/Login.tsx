@@ -44,8 +44,8 @@ export default function Login() {
   return (
     <>
       {contextHolder}
-      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
-        <Card className="w-96 shadow-lg p-4 bg-gray-800">
+      <div className="flex items-center justify-center min-h-screen bg-[#18181b] text-white">
+        <Card className="w-96  p-4 bg-[#141414]">
           <h2 className="text-center text-xl font-semibold mb-4">Login</h2>
           <Form name="login" onFinish={onFinish} layout="vertical">
             <Form.Item
